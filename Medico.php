@@ -3,14 +3,9 @@
 // Uma médico tem nome, data de nascimento, CPF, RG e  
 // CRM.A classe deve contemplar os modificadores de acesso 
 // e os métodos Getters e Setters.
-
-class Medico{
-    private $nome;
-    private $dataNascimento;
-    private $cpf;
-    private $rg;
+class Medico extends Pessoa{
     private $crm;
-
+    
     public function setNome($nome)
     {
         $this->nome = $nome;
@@ -51,12 +46,12 @@ class Medico{
         return $this->rg;
     }
 
-    public function setcrm($crm)
+    public function setCrm($crm)
     {
         $this->crm = $crm;
         return $this->crm;
     }
-    public function getcrm()
+    public function getCrm()
     {
         return $this->crm;
     }

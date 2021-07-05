@@ -3,10 +3,10 @@ class Pessoa
 {
     //Uma pessoa tem nome, data 
     //de nascimento, CPF e RG.
-    private $nome;
-    private $dataNascimento;
-    private $cpf;
-    private $rg;
+    public $nome;
+    public $dataNascimento;
+    public $cpf;
+    public $rg;
 
 
     public function setNome($nome)

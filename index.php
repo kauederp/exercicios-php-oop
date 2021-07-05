@@ -17,32 +17,12 @@
             <input type="text" name="div1-nome" id="div1-nome"><br>
             <label for="div1-dataN">data de nascimento:</label>
             <input type="date" name="div1-dataN" id="div1-dataNascimento"><br>
-            <label for="div1-cpf">cpf:</label>
+            <label for="div1-cpf">CPF:</label>
             <input type="text" name="div1-cpf" id="div1-cpf"><br>
-            <label for="div1-rg">rg:</label>
+            <label for="div1-rg">RG:</label>
             <input type="text" name="div1-rg" id="div1-rg"><br>
             <input type="submit" name="div1-enviar" value="enviar">
         </form>
-        <?php
-            if(isset($_POST['div1-enviar'])){
-                include("Pessoa.php");
-                $Pessoa = new Pessoa();
-                $Pessoa->setNome($_POST['div1-nome']);
-                $Pessoa->setDataNascimento($_POST['div1-dataN']);
-                $Pessoa->setCpf($_POST['div1-cpf']);
-                $Pessoa->setRg($_POST['div1-rg']);
-                echo "<br><table>
-                <th>nome</th>
-                <th>data Nascimento</th>
-                <th>cpf</th>
-                <th>rg</th>
-                <th>crea</th>"
-                ."<tr><td>".$Pessoa->getNome()."</td>"
-                ."<td>".$Pessoa->getDataNascimento()."</td>"
-                ."<td>".$Pessoa->getCpf()."</td>"
-                ."<td>".$Pessoa->getRg()."</td></tr></table>";
-            }  
-        ?>
     </div>
     <br>
     <div id="div-2">
@@ -52,36 +32,14 @@
             <input type="text" name="div2-nome" id="div2-nome"><br>
             <label for="div2-dataN">data de nascimento:</label>
             <input type="date" name="div2-dataN" id="div2-dataN"><br>
-            <label for="div2-cpf">cpf:</label>
+            <label for="div2-cpf">CPF:</label>
             <input type="text" name="div2-cpf" id="div2-cpf"><br>
-            <label for="div2-rg">rg:</label>
+            <label for="div2-rg">RG:</label>
             <input type="text" name="div2-rg" id="div2-rg"><br>
             <label for="div2-crea">CREA:</label>
             <input type="text" name="div2-crea" id="div2-crea">
             <input type="submit" name="div2-enviar" value="enviar">
         </form>
-        <?php
-            if(isset($_POST['div2-enviar'])){
-                include("Engenheiro.php");
-                $Engenheiro = new Engenheiro();
-                $Engenheiro->setNome($_POST['div2-nome']);
-                $Engenheiro->setDataNascimento($_POST['div2-dataN']);
-                $Engenheiro->setCpf($_POST['div2-cpf']);
-                $Engenheiro->setRg($_POST['div2-rg']);
-                $Engenheiro->setCrea($_POST['div2-crea']);
-                echo "<br><table>
-                <th>nome</th>
-                <th>data Nascimento</th>
-                <th>cpf</th>
-                <th>rg</th>
-                <th>crea</th>"
-                ."<tr><td>".$Engenheiro->getNome()."</td>"
-                ."<td>".$Engenheiro->getDataNascimento()."</td>"
-                ."<td>".$Engenheiro->getCpf()."</td>"
-                ."<td>".$Engenheiro->getRg()."</td>"
-                ."<td>".$Engenheiro->getCrea()."</td></tr></table>";
-            }
-        ?>
     </div>
     <br>
     <div id="div-3">
@@ -99,28 +57,70 @@
             <input type="text" name="div3-crm" id="div3-crm">
             <input type="submit" name="div3-enviar" value="enviar">
         </form>
-        <?php
-            if(isset($_POST['div3-enviar'])){
-                include("Medico.php");
-                $Medico = new Medico();
-                $Medico->setNome($_POST['div3-nome']);
-                $Medico->setDataNascimento($_POST['div3-dataN']);
-                $Medico->setCpf($_POST['div3-cpf']);
-                $Medico->setRg($_POST['div3-rg']);
-                $Medico->setCrm($_POST['div3-crm']);
-                echo "<br><table>
-                <th>nome</th>
-                <th>data Nascimento</th>
-                <th>cpf</th>
-                <th>rg</th>
-                <th>crea</th>"
-                ."<tr><td>".$Medico->getNome()."</td>"
-                ."<td>".$Medico->getDataNascimento()."</td>"
-                ."<td>".$Medico->getCpf()."</td>"
-                ."<td>".$Medico->getRg()."</td>"
-                ."<td>".$Medico->getCrm()."</td></tr></table>";
-            }
-        ?>
+       
     </div>
+    <?php
+        include("Pessoa.php");
+        include("Engenheiro.php");
+        include("Medico.php");
+        if(isset($_POST['div1-enviar'])){
+            
+            $Pessoa = new Pessoa();
+            $Pessoa->setNome($_POST['div1-nome']);
+            $Pessoa->setDataNascimento($_POST['div1-dataN']);
+            $Pessoa->setCpf($_POST['div1-cpf']);
+            $Pessoa->setRg($_POST['div1-rg']);
+            echo "<br><h1>Pessoa</h1><table>
+            <th>nome</th>
+            <th>data Nascimento</th>
+            <th>cpf</th>
+            <th>rg</th>"
+            ."<tr><td>".$Pessoa->getNome()."</td>"
+            ."<td>".$Pessoa->getDataNascimento()."</td>"
+            ."<td>".$Pessoa->getCpf()."</td>"
+            ."<td>".$Pessoa->getRg()."</td></tr></table>";
+        }  
+        else if(isset($_POST['div2-enviar'])){
+            
+            $Engenheiro = new Engenheiro();
+            $Engenheiro->setNome($_POST['div2-nome']);
+            $Engenheiro->setDataNascimento($_POST['div2-dataN']);
+            $Engenheiro->setCpf($_POST['div2-cpf']);
+            $Engenheiro->setRg($_POST['div2-rg']);
+            $Engenheiro->setCrea($_POST['div2-crea']);
+            echo "<br><h1>Engenheiro</h1><table>
+            <th>nome</th>
+            <th>data Nascimento</th>
+            <th>cpf</th>
+            <th>rg</th>
+            <th>crea</th>"
+            ."<tr><td>".$Engenheiro->getNome()."</td>"
+            ."<td>".$Engenheiro->getDataNascimento()."</td>"
+            ."<td>".$Engenheiro->getCpf()."</td>"
+            ."<td>".$Engenheiro->getRg()."</td>"
+            ."<td>".$Engenheiro->getCrea()."</td></tr></table>";
+        }
+        else if(isset($_POST['div3-enviar'])){
+            
+            $Medico = new Medico();
+            $Medico->setNome($_POST['div3-nome']);
+            $Medico->setDataNascimento($_POST['div3-dataN']);
+            $Medico->setCpf($_POST['div3-cpf']);
+            $Medico->setRg($_POST['div3-rg']);
+            $Medico->setCrm($_POST['div3-crm']);
+            echo "<br><h1>Médico</h1><table>
+            <th>nome</th>
+            <th>data Nascimento</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>CRM</th>"
+            ."<tr><td>".$Medico->getNome()."</td>"
+            ."<td>".$Medico->getDataNascimento()."</td>"
+            ."<td>".$Medico->getCpf()."</td>"
+            ."<td>".$Medico->getRg()."</td>"
+            ."<td>".$Medico->getCrm()."</td></tr></table>";
+        }
+    
+    ?>
 </body>
 </html>

@@ -1,14 +1,11 @@
 <?php
-class Engenheiro
+class Engenheiro extends Pessoa
 {
     //Uma engenheiro tem nome, data de nascimento, CPF, 
     //RG e  CREA.A classe deve contemplar os 
     // Modificadores de acesso e os métodos Getters e Setters.
 
-    private $nome;
-    private $dataNascimento;
-    private $cpf;
-    private $rg;
+    
     private $crea;
 
     public function setNome($nome)
